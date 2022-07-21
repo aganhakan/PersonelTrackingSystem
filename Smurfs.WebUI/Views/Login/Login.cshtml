@@ -1,0 +1,48 @@
+﻿<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="~/css/Login.css" rel="stylesheet" />
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<div class="container">
+    <div class="card card-container">
+        <img id="dzdlogo-img" class="dzdlogo-img-card" src="https://imgyukle.com/f/2022/06/17/VYWP7s.png" />
+        <img id="profile-img" class="profile-img-card" src="/assets/userAnaSayfaPhoto.png" />
+        
+        <p id="profile-name" class= "profile-name-card" style="color: red">@ViewBag.msg</p>
+        
+        <form method="post" asp-controller="Login" asp-action="LoginUser">
+            <span id="reauth-email" class="reauth-email"></span>
+            <input type="email" id="inputEmail" name="mail" class="form-control" placeholder="Email address" required autofocus>
+            <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+            <div id="remember" class="checkbox">
+                <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
+            </div>
+
+            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">
+                Sign in
+            </button>
+        </form>
+        <a href="#" id ="fp-button" class="forgot-password">
+            Forgot the password?
+        </a>
+    </div>
+</div>
+
+<!--modal-->
+<div class="bg-modal">
+    <div class="modal-content">
+        <p class="fp-title"> Reset your Password </p>
+        <div class="close">+</div>
+        <img id="profile-img" class="profile-img-card-1" src="/assets/userAnaSayfaPhoto.png" />
+        <form action="">
+            <input id="girilenMail" class="fp-email" type="email" placeholder="E-Mail" />
+            <button class="btn btn-lg btn-primary btn-signin btn-fpsubmit gonder" type="submit"> Submit </button>
+        </form>
+    </div>
+</div>
+
+<link href="~/js/ForgotPassword.js" rel="stylesheet" />
+<script src="~/js/ForgotPassword.js"></script>
